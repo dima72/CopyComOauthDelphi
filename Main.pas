@@ -173,17 +173,14 @@ begin
       + '&oauth_signature_method=HMAC-SHA1'
       + '&oauth_timestamp=' + IntToStr( DateTimeToUnix( Now ) )  //NowUTC
       + '&oauth_version=1.0';
-    //  + '&scope=%7B%22profile%22%3A%7B%22read%22%3A%20true%2C%22write%22%3A%20true%7D%7D';
-
-    sigbase:='GET&'+URLEncode(baseurl)+'&'+URLEncode(url);
+    
+    sigbase:='GET&'+URLEncode(baseurl)+'&'+URLEncode(params);
 
     consec := URLEncode(SecterKeyEdit.Text + '&' );
 
     signature := OAuthEncryptHMACSha1(sigbase, consec );
 
-    url:=baseurl+'?'+params
-      + '&oauth_signature=' + signature;
-
+    url:=baseurl+'?'+params + '&oauth_signature=' + signature;
 
    Token_AuthEdit.Text := HttpsGet( url, headers );
  // oauth_problem=signature_invalid&debug_sbs=GET&https%3A%2F%2Fapi.copy.com%2Foauth%2Frequest&oauth_callback%3D%2522http%253A%252F%252F127.0.0.1%253A8889%252F%2522%26oauth_consumer_key%3D5znMJPQpLOY1PnEyG34Zb9lpSNcqqwoi%26oauth_nonce%3D333D5355281463D82DF5ED7D155DFE6B.324990112%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1394901745%26oauth_version%3D1.0%26scope%3D%257B%2522profile%2522%253A%257B%2522read%2522%253A%2520true%252C%2522write%2522%253A%2520true%257D%257Doauth_error_code=2000'
