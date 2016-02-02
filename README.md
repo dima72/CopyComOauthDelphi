@@ -1,6 +1,7 @@
 # CopyComOauthDelphi
 
-Copy and CudaDrive services will be discontinued. Please use Syncovery file sychronization tool to migrate 
+Copy and CudaDrive services will be discontinued. https://www.copy.com/page/home;section:plans
+Please use Syncovery file sychronization tool to migrate 
 your files form CopyCom to somewhere else. https://www.syncovery.com
 
 
