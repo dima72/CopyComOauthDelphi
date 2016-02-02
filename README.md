@@ -1,4 +1,9 @@
 # CopyComOauthDelphi
+
+Copy and CudaDrive services will be discontinued. Please use Syncovery file sychronization tool to migrate 
+your files form CopyCom to somewhere else. https://www.syncovery.com
+
+
 Example of Oauth with CopyCom in Delphi
 
 Entry point is function DoAuth, please start from there in order to see where problem happens.
